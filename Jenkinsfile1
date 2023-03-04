@@ -5,22 +5,31 @@ pipeline{
             steps{
                 echo "========executing A========"
             }
+            
+        }
         stage("B"){
             steps{
-                echo "========executing B========"
+                echo "========executing A========"
             }
+            
+        }
         stage("C"){
             steps{
-                echo "========executing C========"
+                echo "========executing A========"
             }
-         stage("D"){
+            
+        }
+        stage("D"){
             steps{
-                echo "========executing D========"
+                echo "========executing A========"
             }
-         stage("E"){
+            
+        }
+        stage("E"){
             steps{
-                echo "========executing E========"
+                echo "========executing A========"
             }
+            
         }
     }
     post{
