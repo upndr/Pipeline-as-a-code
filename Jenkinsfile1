@@ -1,27 +1,30 @@
 pipeline{
     agent any
     stages{
-        stage("A"){
+        stage("echo a line"){
             steps{
-                echo "========executing A========"
+                echo 'this is step one'
             }
             
         }
-        stage("B"){
+        stage("run a command"){
             steps{
-                echo "========executing A========"
+                sh 'pwd'
             }
             
         }
-        stage("C"){
+        stage("run multiple command"){
             steps{
-                echo "========executing A========"
+                sh '''pwd
+                ls
+                date
+                cal'''
             }
             
         }
-        stage("D"){
+        stage("continue ?"){
             steps{
-                echo "========executing A========"
+                input 'continue'
             }
             
         }
