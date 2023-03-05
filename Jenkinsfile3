@@ -8,14 +8,13 @@ pipeline{
             steps{
                  // mvn test
                  sh 'mvn --version'
-                echo "========executing A========"
+           
             }
             
         }
         stage("Build"){
             steps{
                 sh 'mvn install'
-                echo "========executing A========"
             }
             
         }    
@@ -23,7 +22,6 @@ pipeline{
             steps{
                 // deploy on container -> plugin
                 deploy adapters: [tomcat9(credentialsId: 'tomcatsserverdetails1', path: '', url: 'http://65.2.146.18:443')], contextPath: '/app', war: '**/*.war'
-                echo "========executing A========"
             }
 
         }
@@ -31,7 +29,6 @@ pipeline{
             steps{
                 // deploy on container -> plugin
                 deploy adapters: [tomcat9(credentialsId: 'tomcatsserverdetails1', path: '', url: 'http://13.232.235.232:443')], contextPath: '/app', war: '**/*.war'
-                echo "========executing A========"
             }          
         }
     }
